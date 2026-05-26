@@ -18,6 +18,9 @@ const SmartExploration = () => {
     defaultValues: {
       type: "op1",
       scenario: "",
+      die: [0, 1],
+      enca: [0, 1],
+      sub: [0, 1],
     },
     validators: { onSubmit: schema },
     onSubmit: ({ value }) => {
