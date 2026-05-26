@@ -20,11 +20,11 @@ export const ProductSelect = () => {
 
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="1">DDR5</SelectItem>
-            <SelectItem value="2">FLASH 1</SelectItem>
-            <SelectItem value="3">FLASH 2</SelectItem>
-            <SelectItem value="4">LPDRAM</SelectItem>
-            <SelectItem value="5">eMMC</SelectItem>
+            <SelectItem value="DDR5">DDR5</SelectItem>
+            <SelectItem value="FLASH 1">FLASH 1</SelectItem>
+            <SelectItem value="FLASH 2">FLASH 2</SelectItem>
+            <SelectItem value="LPDRAM">LPDRAM</SelectItem>
+            <SelectItem value="eMMC">eMMC</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
