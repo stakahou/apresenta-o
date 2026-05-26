@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.github
+.vscode
+.env
+.env.*
+pnpm-store
+*.log
+Dockerfile
+docker-compose.yml
+docker
