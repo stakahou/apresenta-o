@@ -33,12 +33,12 @@ export const StepThree: FC<ComponentProps<typeof AccordionItem>> = ({
       <AccordionContent className="flex flex-col gap-8">
         <FieldGroup className="grid grid-cols-2">
           <ProductSelect />
-          <SlideInput label="Espessura do Die" />
+          <SlideInput label="Espessura do Die" name="die" />
         </FieldGroup>
 
         <FieldGroup className="grid grid-cols-2">
-          <SlideInput label="Espessura do Encapsulante" />
-          <SlideInput label="Espessura do Substrato" />
+          <SlideInput label="Espessura do Encapsulante" name="enca" />
+          <SlideInput label="Espessura do Substrato" name="sub" />
         </FieldGroup>
       </AccordionContent>
     </AccordionItem>
