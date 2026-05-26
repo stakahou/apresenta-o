@@ -4,6 +4,9 @@ on:
   push:
     branches: [main, master]
 
+permissions:
+  contents: write   # ✅ ESSENCIAL para o deploy funcionar
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -19,7 +22,7 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 9
-          run_install: false   # ⚠️ importante (evita erro automático)
+          run_install: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -34,7 +37,6 @@ jobs:
         run: pnpm build
 
       - name: Deploy
-        if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
