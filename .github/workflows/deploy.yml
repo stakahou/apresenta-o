@@ -3,14 +3,11 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main, master]
-  pull_request:
-    branches: [main, master]
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
-    # Força o uso de Node 24 em todas as actions
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -22,6 +19,7 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 9
+          run_install: false   # ⚠️ importante (evita erro automático)
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -30,12 +28,12 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build project
         run: pnpm build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v4
         with:
